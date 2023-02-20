@@ -7,7 +7,7 @@ function SongList() {
 
   useEffect(() => {
     async function fetchSongs() {
-      const response = await axios.get("http://localhost:3001/getData");
+      const response = await axios.get("https://downloadsongs-production.up.railway.app/getData");
       setSongs(response.data);
     }
 
@@ -19,7 +19,7 @@ function SongList() {
       {songs.map((song) => (
         <div key={song._id}>
           <h2>{song.songTitle}</h2>
-          <img src={song.songThumbnail} width="20%" height="20%"></img> <br></br>
+          <img src={song.songThumbnail} width="20%" height="20%" alt="songThumbnails"></img> <br></br>
           <AudioPlayer src={`data:audio/mpeg;base64,${song.songData}`} controls />
         </div>
       ))}
