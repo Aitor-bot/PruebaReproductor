@@ -20,7 +20,7 @@ function SongList() {
         <div key={song._id}>
           <h2>{song.songTitle}</h2>
           <img src={song.songThumbnail} width="20%" height="20%" alt="songThumbnails"></img> <br></br>
-          <AudioPlayer src={`data:audio/mpeg;base64,${song.songData}`} controls />
+          <AudioPlayer src={song.songData} controls />
         </div>
       ))}
     </div>
